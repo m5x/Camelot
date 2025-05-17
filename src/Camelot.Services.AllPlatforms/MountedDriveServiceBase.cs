@@ -92,6 +92,7 @@ public abstract class MountedDriveServiceBase : IMountedDriveService
         _environmentDriveService
             .GetMountedDrives()
             .Where(Filter)
+            .DistinctBy(p => p.RootDirectory)
             .Select(CreateFrom)
             .ToArray();
 
