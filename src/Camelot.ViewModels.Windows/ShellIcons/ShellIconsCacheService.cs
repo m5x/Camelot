@@ -133,6 +133,11 @@ public class ShellIconsCacheService : IShellIconsCacheService
 
     private IBitmap ShellIcon(string path)
     {
+        if (_shellIconsService == null)
+        {
+            return null;
+        }
+
         IBitmap result;
 
         // step #2
